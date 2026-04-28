@@ -134,7 +134,7 @@ class TestBankAccount(unittest.TestCase):
             print("FAIL")
 
 
-    def test_balance_exists(self)
+    def test_balance_exists(self):
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.get_acct_balance()
         expected_outcome = 800
