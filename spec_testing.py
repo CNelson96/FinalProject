@@ -23,7 +23,7 @@ def main():
 
         elif user_input == RUN_SPECIFIC_TEST:
             print(SHOW_ALL_TESTS)
-            choice = input("Enter the test you would like to run")
+            choice = input("Enter the number of the test you would like to run")
 
         
              while choice != "EXIT" and (not choice.isdigit() or int(choice) < 1 or int(choice) > 6):
