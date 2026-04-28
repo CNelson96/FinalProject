@@ -67,7 +67,7 @@ class TestBankAccount(unittest.TestCase):
 
     def test_balance_after_withdrawal(self):
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
-        actual = acct.withdrawal(50)
+        actual_value = acct.withdrawal(50)
         expected_outcome = 750
 
         if actual == expected_outcome:
@@ -75,13 +75,13 @@ class TestBankAccount(unittest.TestCase):
         else:
             print("FAIL")
 
-        self.assertEqual(expected_outcome, actual)
+        self.assertEqual(expected_outcome, actual_value)
 
 
 
     def test_balance_after_deposit(self):
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
-        actual = acct.deposit(50)
+        actual_value = acct.deposit(50)
         expected_outcome = 850
 
         if actual == expected_outcome:
@@ -89,12 +89,12 @@ class TestBankAccount(unittest.TestCase):
         else:
             print("FAIL")
 
-        self.assertEqual(expected_outcome,actual)
+        self.assertEqual(expected_outcome,actual_value)
 
 
     def test_account_name_created(self):
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
-        actual = acct.get_acct_num()
+        actual_value = acct.get_acct_num()
         expected_outcome = "CN856235"
 
 
@@ -103,7 +103,13 @@ class TestBankAccount(unittest.TestCase):
         else:
             print("FAIL: ")
 
-        self.assertEqual(expected_outcome, actual)
+        self.assertEqual(expected_outcome, actual_value)
+
+
+    def test_account_exists(self):
+        acct = BankAccount("Cory", "Nelson", "CN856235", 800)
+        actual_value = 
+        expected_value = 
 
 
 
