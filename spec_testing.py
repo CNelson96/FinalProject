@@ -92,7 +92,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome,actual_value)
 
 
-    def test_account_name_created(self):
+    def test_account_number_created(self):
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.get_acct_num()
         expected_outcome = "CN856235"
@@ -106,10 +106,45 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
 
-    def test_account_exists(self):
+    def test_first_name_exists(self):
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
-        actual_value = 
-        expected_value = 
+        actual_value = acct.get_acct_first_name()
+        expected_outcome = "Cory"
+
+        if actual_value == expected_outcome:
+            print("PASS")
+        else:
+            print("FAIL")
+
+        self.assertEqual(expected_outcome, actual_value)
+
+    def test_last_name_exists(self):
+        acct = BankAccount("Cory", "Nelson", "CN856235", 800)
+        actual_value = acct.get_acct_last_name()
+        expected_outcome = "Nelson"
+
+        if actual value == expected_outcome:
+            print("PASS")
+        else:
+            print("FAIL")
+
+
+    def test_balance_exists(self)
+        acct = BankAccount("Cory", "Nelson", "CN856235", 800)
+        actual_value = acct.get_acct_balance()
+        expected_outcome = 800
+
+        if actual_value == expected_outcome:
+            print("PASS")
+        else:
+            print("FAIL")
+
+
+
+            
+
+
+
 
 
 
