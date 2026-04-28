@@ -22,15 +22,21 @@ def main():
             run_all_tests()
 
         elif user_input == RUN_SPECIFIC_TEST
-            print("Choose a specific test to run")
+            print(SHOW_ALL_TESTS)
+            choice = input("Enter the test you would like to run")
+
+        
+         while choice != "EXIT":
+            print("Invalid selection. Please choose a number (1-4).")
+            choice = input("Choose an option: ").upper()
 
         elif user_input == SHOW_ALL_TESTS:
-            print("Test balance after withdrawal")
-            print("Test balance after deposit")
-            print("Test account number created")
-            print("Test first name exists")
-            print("Test last name exists")
-            print("Test balance exists")
+            print("1. Test balance after withdrawal")
+            print("2. Test balance after deposit")
+            print("3. Test account number created")
+            print("4. Test first name exists")
+            print("5. Test last name exists")
+            print("6. Test balance exists")
 
 
         elif user_input == EXIT:
@@ -65,6 +71,9 @@ def run_all_tests():
     testing_suite = unittest.TestLoader().loadTestsFromTestCase(TestBankAccount)
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(testing_suite)
+
+def run_specific_test(test_to_run)
+    
 
 
 class TestBankAccount(unittest.TestCase):
