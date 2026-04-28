@@ -25,7 +25,12 @@ def main():
             print("Choose a specific test to run")
 
         elif user_input == SHOW_ALL_TESTS:
-            print("")
+            print("Test balance after withdrawal")
+            print("Test balance after deposit")
+            print("Test account number created")
+            print("Test first name exists")
+            print("Test last name exists")
+            print("Test balance exists")
 
 
         elif user_input == EXIT:
@@ -38,7 +43,7 @@ def main():
 
 def display_test_options():
         print('\n1. Run all tests')
-        print("2. Run each test separately")
+        print("2. Run a specific test")
         print("3. Show all tests")
         print("4. Exit")
 
