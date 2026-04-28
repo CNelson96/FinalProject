@@ -3,7 +3,7 @@ import unittest
 
 
 RUN_ALL_TESTS = 1
-RUN_EACH_TEST_SEPARATELY = 2
+RUN_SPECIFIC_TEST = 2
 SHOW_ALL_TESTS = 3
 EXIT = 4
 
@@ -21,8 +21,8 @@ def main():
             print("====Running All Tests====")
             run_all_tests()
 
-        elif user_input == RUN_EACH_TEST_SEPARATELY:
-            print("====Running Each Test Separately====")
+        elif user_input == RUN_SPECIFIC_TEST
+            print("Choose a specific test to run")
 
         elif user_input == SHOW_ALL_TESTS:
             print("")
