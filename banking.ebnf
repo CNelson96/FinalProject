@@ -1,1 +1,32 @@
+digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
 
+letter ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+
+integer ::= digit, {digit} ;
+
+amount ::= integer, [ ".", digit, {digit}] ;
+
+name ::= letter, {letter} ;
+
+account_number ::= letter, letter, digit, digit, digit, digit, digit, digit ;
+
+exit ::= "EXIT" ;
+
+menu_choice ::= "1" | "2" | "3" | "4" | "5" | "6" | exit ;
+
+deposit ::= "1", amount ;
+
+withdrawal ::= "2", amount ;
+
+check_balance ::= "3" ;
+
+create_account ::= "4", name, name, account_number, amount ;
+
+check_other_account ::= "5", account_number ;
+
+exit_program ::= "6" | exit ;
+
+command ::= deposit | withdrawal | check_balance | create_account | check_other_account | exit_program ;
+
+program ::= (account_number | exit), {command} ;
