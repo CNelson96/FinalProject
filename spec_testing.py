@@ -26,8 +26,8 @@ def main():
             choice = input("Enter the test you would like to run")
 
         
-         while choice != "EXIT":
-            print("Invalid selection. Please choose a number (1-4).")
+         while choice != "EXIT" and (not choice.isdigit() or int(choice) < 1 or int(choice) > 6):
+            print("Invalid selection. Please choose a number (1-6).")
             choice = input("Choose an option: ").upper()
 
         elif user_input == SHOW_ALL_TESTS:
