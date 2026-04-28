@@ -21,14 +21,14 @@ def main():
             print("====Running All Tests====")
             run_all_tests()
 
-        elif user_input == RUN_SPECIFIC_TEST
+        elif user_input == RUN_SPECIFIC_TEST:
             print(SHOW_ALL_TESTS)
             choice = input("Enter the test you would like to run")
 
         
-         while choice != "EXIT" and (not choice.isdigit() or int(choice) < 1 or int(choice) > 6):
-            print("Invalid selection. Please choose a number (1-6).")
-            choice = input("Choose an option: ").upper()
+             while choice != "EXIT" and (not choice.isdigit() or int(choice) < 1 or int(choice) > 6):
+                print("Invalid selection. Please choose a number (1-6).")
+                choice = input("Choose an option: ").upper()
 
         elif user_input == SHOW_ALL_TESTS:
             print("1. Test balance after withdrawal")
@@ -72,7 +72,8 @@ def run_all_tests():
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(testing_suite)
 
-def run_specific_test(test_to_run)
+def run_specific_test(test_to_run):
+    testing_suit = unittest.TestsLoader().
     
 
 
@@ -84,7 +85,7 @@ class TestBankAccount(unittest.TestCase):
         actual_value = acct.withdrawal(50)
         expected_outcome = 750
 
-        if actual == expected_outcome:
+        if actual_value == expected_outcome:
             print("PASS")
         else:
             print("FAIL")
@@ -98,7 +99,7 @@ class TestBankAccount(unittest.TestCase):
         actual_value = acct.deposit(50)
         expected_outcome = 850
 
-        if actual == expected_outcome:
+        if actual_value == expected_outcome:
             print("PASS")
         else:
             print("FAIL")
@@ -112,7 +113,7 @@ class TestBankAccount(unittest.TestCase):
         expected_outcome = "CN856235"
 
 
-        if actual == expected_outcome:
+        if actual_value == expected_outcome:
             print("PASS: ")
         else:
             print("FAIL: ")
@@ -137,7 +138,7 @@ class TestBankAccount(unittest.TestCase):
         actual_value = acct.get_acct_last_name()
         expected_outcome = "Nelson"
 
-        if actual value == expected_outcome:
+        if actual_value == expected_outcome:
             print("PASS")
         else:
             print("FAIL")
