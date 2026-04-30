@@ -6,12 +6,12 @@ class Interpreter:
         self.customer_accts = {}
 
         # Current account
-        self.current_acct_num = None
+        self.current_acct_num = ""
 
         # Running flag
         self.running = True
 
-        # Load starter accounts
+        # Load default accounts
         self.create_hard_coded_accounts()
 
 
@@ -30,7 +30,6 @@ class Interpreter:
     # --- INTERPRET PROGRAM ----------------------------------------
     def interpret_program(self, program_node):
         children = program_node.get_children()
-        index = 0
 
         for child in children:
             if self.running:
