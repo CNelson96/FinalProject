@@ -114,9 +114,9 @@ class TestBankAccount(unittest.TestCase):
         expected_outcome = 750
 
         if actual_value == expected_outcome:
-            print("PASS: Test_balance_after withdrawal returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
+            print("PASS: Test_balance_after_withdrawal returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
         else:
-            print("FAIL: Test_balance_after withdrawal returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
+            print("FAIL: Test_balance_after_withdrawal returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
 
         self.assertEqual(expected_outcome, actual_value)
 
@@ -126,9 +126,9 @@ class TestBankAccount(unittest.TestCase):
         expected_outcome = 850
 
         if actual_value == expected_outcome:
-            print("PASS: Test_balance_after withdrawal returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
+            print("PASS: test_balance_after_deposit returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
         else:
-            print("FAIL: Test_balance_after withdrawal returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
+            print("FAIL: test_balance_after_deposit returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
 
         self.assertEqual(expected_outcome, actual_value)
 
@@ -138,9 +138,9 @@ class TestBankAccount(unittest.TestCase):
         expected_outcome = "CN856235"
 
         if actual_value == expected_outcome:
-            print("PASS: Test_balance_after withdrawal returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
+            print("PASS:  test_account_number_created returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
         else:
-            print("FAIL: Test_balance_after withdrawal returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
+            print("FAIL:  test_account_number_created returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
 
         self.assertEqual(expected_outcome, actual_value)
 
@@ -150,9 +150,9 @@ class TestBankAccount(unittest.TestCase):
         expected_outcome = "Cory"
 
         if actual_value == expected_outcome:
-            print("PASS: Test_balance_after withdrawal returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
+            print("PASS: test_first_name_exists returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
         else:
-            print("FAIL: Test_balance_after withdrawal returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
+            print("FAIL: Ttest_first_name_exists returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
 
         self.assertEqual(expected_outcome, actual_value)
 
@@ -162,9 +162,9 @@ class TestBankAccount(unittest.TestCase):
         expected_outcome = "Nelson"
 
         if actual_value == expected_outcome:
-            print("PASS: Test_balance_after withdrawal returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
+            print("PASS: test_last_name_exists returned " + actual_value + "which matched the expected outcome of" + expected_outcome)
         else:
-            print("FAIL: Test_balance_after withdrawal returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
+            print("FAIL: test_last_name_exists returned" + actual_value + "which does not match the expected outcome of" + expected_outcome)
 
         self.assertEqual(expected_outcome, actual_value)
 
