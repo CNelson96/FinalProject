@@ -109,6 +109,8 @@ def run_specific_test(test_to_run):
 class TestBankAccount(unittest.TestCase):
 
     def test_balance_after_withdrawal(self):
+
+        print("Testing balance after withdrawal")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.withdrawal(50)
         expected_outcome = 750
@@ -121,6 +123,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_balance_after_deposit(self):
+        print("Testing balance after deposit")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.deposit(50)
         expected_outcome = 850
@@ -133,6 +136,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_account_number_created(self):
+        print("Testing account number created")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.get_acct_num()
         expected_outcome = "CN856235"
@@ -145,6 +149,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_first_name_exists(self):
+        print("Testing first name exists")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.get_first_name()
         expected_outcome = "Cory"
@@ -157,6 +162,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_last_name_exists(self):
+        print("Testing last name exists")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.get_last_name()
         expected_outcome = "Nelson"
@@ -169,6 +175,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_balance_exists(self):
+        print("Testing balance exists")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.get_balance()
         expected_outcome = 800
@@ -182,6 +189,7 @@ class TestBankAccount(unittest.TestCase):
 
 
     def test_negative_withdrawal_amount(self):
+        print("Testing negative withdrawal amount")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.withdrawal(-1000)
         expected_outcome = 800
@@ -194,6 +202,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_negative_deposit_amount(self):
+        print("Testing negative deposit")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.deposit(-1000)
         expected_outcome = 800
@@ -208,6 +217,7 @@ class TestBankAccount(unittest.TestCase):
 
 
     def test_amount_withdrawal_over_balance(self):
+        print("Testing amount of withdrawal over balance amount")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.withdrawal(1000)
         expected_outcome = 800
@@ -220,6 +230,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_withdrawal_of_zero(self):
+        print("Testing a withdrawal of 0")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.withdrawal(0)
         expected_outcome = 800
@@ -232,6 +243,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_deposit_of_zero(self):
+        print("Testing a deposit of 0")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         actual_value = acct.deposit(0)
         expected_outcome = 800
@@ -244,6 +256,7 @@ class TestBankAccount(unittest.TestCase):
         self.assertEqual(expected_outcome, actual_value)
 
     def test_multiple_transactions(self):
+        print("Testing multiple transactions")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
         acct.deposit(200)
         actual_value = acct.withdrawal(600)
