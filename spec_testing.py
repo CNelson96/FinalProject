@@ -39,7 +39,7 @@ def main():
         else:
             print("Invalid option")
 
-
+#fuction that shows menu options
 def display_test_options():
     print('\n1. Run all tests')
     print("2. Run a specific test")
@@ -60,7 +60,7 @@ def display_test_options():
 
     return result
 
-
+# function that shows all the tests options
 def show_test_options():
     print("1. Test balance after withdrawal")
     print("2. Test balance after deposit")
@@ -76,13 +76,13 @@ def show_test_options():
     print("12. Test multiple transactions")
 
 
-
+# run all tests function for unittest
 def run_all_tests():
     testing_suite = unittest.TestLoader().loadTestsFromTestCase(TestBankAccount)
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(testing_suite)
 
-
+# run seperate tests for unittest
 def run_specific_test(test_to_run):
     tests = {
         "1": "test_balance_after_withdrawal",
@@ -105,7 +105,7 @@ def run_specific_test(test_to_run):
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(testing_suite)
 
-
+# class setupt for all spec testing to also work in unittest
 class TestBankAccount(unittest.TestCase):
 
     def test_balance_after_withdrawal(self):
