@@ -8,7 +8,7 @@
 # Class: CSS335
 # Assignment: Final Project Banking
 # File Name: Token.py
-# Description: Creating the tokenizing for the banking program
+# Description: Creating the required tokens for the banking program
 #
 
 
