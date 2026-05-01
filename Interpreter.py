@@ -8,7 +8,7 @@
 # Class: CSS335
 # Assignment: Final Project Banking
 # File Name: Interpreter.py
-# Description: Creating interpreter for DSL
+# Description: Creating interpreter for banking program
 #
 
 
