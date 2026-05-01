@@ -13,9 +13,18 @@
 
 
 
+
+
+
+
+#Importing BankAccount class from BankAccount file
 from BankAccount import BankAccount
+
+#Importing Python unit testing
 import unittest
 
+
+#Menu globals
 RUN_ALL_TESTS = 1
 RUN_SPECIFIC_TEST = 2
 SHOW_ALL_TESTS = 3
@@ -25,19 +34,23 @@ EXIT = 4
 def main():
     user_input = 0
 
+    # continue running unless user selects exit
     while user_input != EXIT:
 
         user_input = display_test_options()
 
+        # run all tests
         if user_input == RUN_ALL_TESTS:
             print("====Running All Tests====")
             run_all_tests()
 
+        # choosing a selected test
         elif user_input == RUN_SPECIFIC_TEST:
             show_test_options()
             choice = input("Enter the number of the test you would like to run: ")
 
 
+            # validating choice
             while choice != "EXIT" and (not choice.isdigit() or int(choice) < 1 or int(choice) > 12):
                 print("Invalid selection. Please choose a number (1-12).")
                 choice = input("Choose an option: ").upper()
@@ -45,16 +58,18 @@ def main():
             if choice != "EXIT":
                 run_specific_test(choice)
 
+        #show a list of all tests
         elif user_input == SHOW_ALL_TESTS:
             show_test_options()
 
+        # Exiting program
         elif user_input == EXIT:
             print("====Leaving Testing Environment====")
 
         else:
             print("Invalid option")
 
-
+#Function of menu options
 def display_test_options():
     print('\n1. Run all tests')
     print("2. Run a specific test")
@@ -75,7 +90,7 @@ def display_test_options():
 
     return result
 
-
+#Function that shows all test options
 def show_test_options():
     print("1. Test balance after withdrawal")
     print("2. Test balance after deposit")
@@ -92,12 +107,13 @@ def show_test_options():
 
 
 
+#Function that uses unittest to run all tests
 def run_all_tests():
     testing_suite = unittest.TestLoader().loadTestsFromTestCase(TestBankAccount)
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(testing_suite)
 
-
+#Function that runs a selected test
 def run_specific_test(test_to_run):
     tests = {
         "1": "test_balance_after_withdrawal",
@@ -114,15 +130,17 @@ def run_specific_test(test_to_run):
         "12": "test_multiple_transactions"
     }
 
+    #Creating a test suite with only one selected test
     testing_suite = unittest.TestSuite()
     testing_suite.addTest(TestBankAccount(tests[test_to_run]))
 
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(testing_suite)
 
-
+#Unit testing class
 class TestBankAccount(unittest.TestCase):
 
+    #Test withdrawal lowers balance correctly
     def test_balance_after_withdrawal(self):
 
         print("Testing balance after withdrawal")
@@ -137,6 +155,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test deposit increases balance correctly
     def test_balance_after_deposit(self):
         print("Testing balance after deposit")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -150,6 +169,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test account number getter
     def test_account_number_created(self):
         print("Testing account number created")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -163,6 +183,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test first name getter
     def test_first_name_exists(self):
         print("Testing first name exists")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -176,6 +197,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test last name getter
     def test_last_name_exists(self):
         print("Testing last name exists")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -189,6 +211,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test starting balance getter
     def test_balance_exists(self):
         print("Testing balance exists")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -202,7 +225,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome,actual_value)
 
-
+    # Test negative withdrawal does nothing
     def test_negative_withdrawal_amount(self):
         print("Testing negative withdrawal amount")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -216,6 +239,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test negative deposit does nothing
     def test_negative_deposit_amount(self):
         print("Testing negative deposit")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -229,8 +253,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
-
-
+    # Test withdrawing more than balance fails
     def test_amount_withdrawal_over_balance(self):
         print("Testing amount of withdrawal over balance amount")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -244,6 +267,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test withdrawing zero does nothing
     def test_withdrawal_of_zero(self):
         print("Testing a withdrawal of 0")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -257,6 +281,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test depositing zero does nothing
     def test_deposit_of_zero(self):
         print("Testing a deposit of 0")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -270,6 +295,7 @@ class TestBankAccount(unittest.TestCase):
 
         self.assertEqual(expected_outcome, actual_value)
 
+    # Test multiple transactions in sequence
     def test_multiple_transactions(self):
         print("Testing multiple transactions")
         acct = BankAccount("Cory", "Nelson", "CN856235", 800)
@@ -289,4 +315,3 @@ class TestBankAccount(unittest.TestCase):
 
 if __name__ == "__main__":
     main()
-
