@@ -1,3 +1,19 @@
+# I certify that the Python file I am submitting is all my own work.
+# None of it is copied from any source or any person.
+# Signed: Cory Nelson, Marcus Her, Nou Chai Thao.
+# Date: 5/01/2026
+#
+# Author: Cory Nelson, Marcus Her, Nou Chai Thao.
+# Date:  5/01/2026
+# Class: CSS335
+# Assignment: Final Project Banking
+# File Name: banking.py
+# Description: Main program for banking
+#
+
+
+
+
 from BankAccount import BankAccount
 
 # Global Constants
